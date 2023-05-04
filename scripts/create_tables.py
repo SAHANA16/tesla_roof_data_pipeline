@@ -8,10 +8,13 @@ def create_tables(conn):
     cur.execute('''
         CREATE TABLE IF NOT EXISTS Roof (
             id SERIAL PRIMARY KEY,
-            version INTEGER,
-            area FLOAT,
-            roof_type_id INTEGER
-        );
+            roof_uid UUID DEFAULT uuid_generate_v4(),
+            version INTEGER NOT NULL,
+            area FLOAT NOT NULL,
+            roof_type_id INTEGER REFERENCES RoofTypes(id),
+            timestamp TIMESTAMPTZ DEFAULT NOW(),
+            UNIQUE (roof_uid, version)
+        )
     ''')
 
     cur.execute('''
