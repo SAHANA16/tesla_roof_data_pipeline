@@ -1,0 +1,4 @@
+CREATE TABLE RoofTypes (
+    id SERIAL PRIMARY KEY,
+    type VARCHAR(255) UNIQUE NOT NULL
+);
