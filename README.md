@@ -11,19 +11,19 @@ This data pipeline processes and stores roof geometry data in a PostgreSQL datab
 
 	1. Clone the repository:
 
-		git clone https://github.com/your_github_username/tesla_roof_data_pipeline.git
-		cd tesla_roof_data_pipeline
+	git clone https://github.com/your_github_username/tesla_roof_data_pipeline.git
+	cd tesla_roof_data_pipeline
 
 	2. Create a config folder and a config.ini file inside it:
 
-		mkdir config
-		cp config/config.example.ini config/config.ini
+	mkdir config
+	cp config/config.example.ini config/config.ini
 
 	3. Update the config/config.ini file with the appropriate PostgreSQL credentials.
 
 	4. Make the run.sh script executable:
 
-		chmod +x run.sh
+	chmod +x run.sh
 
 ## Running the Pipeline
 
@@ -63,25 +63,25 @@ This data pipeline processes and stores roof geometry data in a PostgreSQL datab
 	├── main.py
 	└── run.sh
 
-Explanation of key directories and files:
+## Explanation of key directories and files:
 
-config/: Contains the configuration files, including config.example.ini (template) and config.ini (user-defined configuration).
+	config/: Contains the configuration files, including config.example.ini (template) and config.ini (user-defined configuration).
 
-data/: Folder containing JSON files with roof geometry data.
+	data/: Folder containing JSON files with roof geometry data.
 
-output/: Folder where the output CSV files will be stored.
+	output/: Folder where the output CSV files will be stored.
 
-sql_scripts/: Folder containing ddl commands to create the tables
+	sql_scripts/: Folder containing ddl commands to create the tables
 
-scripts/: Folder containing Python scripts for creating tables, processing data, and exporting data.
+	scripts/: Folder containing Python scripts for creating tables, processing data, and exporting data.
 
-Dockerfile: Dockerfile for building the Docker container.
+	Dockerfile: Dockerfile for building the Docker container.
 
-requirements.txt: File containing the required Python packages.
+	requirements.txt: File containing the required Python packages.
 
-main.py: Main Python script that runs the data pipeline.
+	main.py: Main Python script that runs the data pipeline.
 
-run.sh: Bash script for building the Docker container and running the data pipeline.
+	run.sh: Bash script for building the Docker container and running the data pipeline.
 
 ## How it Works
 
