@@ -9,70 +9,78 @@ This data pipeline processes and stores roof geometry data in a PostgreSQL datab
 
 ## Installation
 
-1. Clone the repository:
+	1. Clone the repository:
 
-	git clone https://github.com/your_github_username/tesla_roof_data_pipeline.git
-	cd tesla_roof_data_pipeline
+		git clone https://github.com/your_github_username/tesla_roof_data_pipeline.git
+		cd tesla_roof_data_pipeline
 
-2. Create a config folder and a config.ini file inside it:
+	2. Create a config folder and a config.ini file inside it:
 
-	mkdir config
-	cp config/config.example.ini config/config.ini
+		mkdir config
+		cp config/config.example.ini config/config.ini
 
-3. Update the config/config.ini file with the appropriate PostgreSQL credentials.
+	3. Update the config/config.ini file with the appropriate PostgreSQL credentials.
 
-4. Make the run.sh script executable:
+	4. Make the run.sh script executable:
 
-	chmod +x run.sh
+		chmod +x run.sh
 
 ## Running the Pipeline
 
-To execute the pipeline, run the run.sh script:
+	To execute the pipeline, run the run.sh script:
 
 	./run.sh
 
-The script will build a Docker container, run the data processing pipeline, and output CSV files representing the transformed data.
+	The script will build a Docker container, run the data processing pipeline, and output CSV files representing the transformed data.
 
 ## Project Structure
 
-tesla_roof_data_pipeline/
-│
-├── config/
-│   ├── config.example.ini
-│   └── config.ini
-│
-├── data/
-│   └── roof_data_*.json
-│
-├── output/
-│
-├── scripts/
-│   ├── create_tables.py
-│   ├── process_data.py
-│   └── export_data.py
-│
-├── sql_scripts/
-│   ├── roof_types.sql
-│   ├── roof.sql
-│   └── mounting_planes.sql
-│
-├── .gitignore
-├── Dockerfile
-├── README.md
-├── requirements.txt
-├── main.py
-└── run.sh
+	tesla_roof_data_pipeline/
+	│
+	├── config/
+	│   ├── config.example.ini
+	│   └── config.ini
+	│
+	├── data/
+	│   └── roof_data_*.json
+	│
+	├── output/
+	│
+	├── scripts/
+	│   ├── create_tables.py
+	│   ├── process_data.py
+	│   └── export_data.py
+	│
+	├── sql_scripts/
+	│   ├── roof_types.sql
+	│   ├── roof.sql
+	│   └── mounting_planes.sql
+	│
+	├── .gitignore
+	├── Dockerfile
+	├── README.md
+	├── requirements.txt
+	├── main.py
+	└── run.sh
 
 Explanation of key directories and files:
 
 config/: Contains the configuration files, including config.example.ini (template) and config.ini (user-defined configuration).
+
 data/: Folder containing JSON files with roof geometry data.
+
 output/: Folder where the output CSV files will be stored.
+
 sql_scripts/: Folder containing ddl commands to create the tables
+
 scripts/: Folder containing Python scripts for creating tables, processing data, and exporting data.
+
 Dockerfile: Dockerfile for building the Docker container.
+
 requirements.txt: File containing the required Python packages.
+
 main.py: Main Python script that runs the data pipeline.
+
 run.sh: Bash script for building the Docker container and running the data pipeline.
 
 ## How it Works
